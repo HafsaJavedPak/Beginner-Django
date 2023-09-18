@@ -6,8 +6,10 @@ from django.urls import reverse
 
 
 class new_tasks_form(forms.Form):
-    task = forms.CharField(help_text="Enter Task")
-
+    task = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Enter something'}),
+        label='My Label'
+    )
 def index(request):
     form = new_tasks_form(request.POST)
     if "tasks" not in request.session :
