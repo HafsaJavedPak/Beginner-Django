@@ -15,8 +15,16 @@
             <li>You have no taks</li>
         {% endfor %}
     </ul>
+    <br>
     <h1>Add Task Plz!</h1>
-1
+    <h1>Add Task Plz!</h1>
+    <form action="{% url 'tasks:addtask' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <!-- <input type="text" name="task1"> -->
+        <input type="submit">
+    </form>
+
     <a href="{% url 'tasks:addtask' %}">Wanna Add a New Task</a>
 </body>
 </html>
