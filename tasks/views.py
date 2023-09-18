@@ -7,7 +7,7 @@ from django.urls import reverse
 
 class new_tasks_form(forms.Form):
     task = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'Enter something'}),
+        widget=forms.TextInput(attrs={'placeholder': 'Enter task'}),
         label='My Label'
     )
 def index(request):
