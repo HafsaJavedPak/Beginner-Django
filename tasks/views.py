@@ -6,7 +6,7 @@ from django.urls import reverse
 
 
 class new_tasks_form(forms.Form):
-    task = forms.CharField(label="New Task")
+    task = forms.CharField(help_text="Enter Task")
 
 def index(request):
     form = new_tasks_form(request.POST)
