@@ -11,12 +11,11 @@ class new_tasks_form(forms.Form):
 def index(request):
     if "tasks" not in request.session :
         request.session["tasks"]=[]
-    return render(request, "tasks/index.html", {
-        "tasks": request.session["tasks"]
-    })
-
-def addtask(request):
-    if request.method == "POST" :
+    if request.method == "GET" :
+        return render(request, "tasks/index.html", {
+            "tasks": request.session["tasks"]
+        })
+    elif request.method == "POST" :
         form = new_tasks_form(request.POST)
         if form.is_valid() :
             task = form.cleaned_data["task"] 
@@ -30,3 +29,19 @@ def addtask(request):
     return render(request, "tasks/addtask.html", {
         "form": new_tasks_form()
     })
+
+# def addtask(request):
+#     if request.method == "POST" :
+#         form = new_tasks_form(request.POST)
+#         if form.is_valid() :
+#             task = form.cleaned_data["task"] 
+#             request.session["tasks"] += [task]
+#             return HttpResponseRedirect(reverse("tasks:index"))
+#         else :
+#             return render(request, "tasks/addtask.html", {
+#             "form": form
+#     })
+        
+#     return render(request, "tasks/addtask.html", {
+#         "form": new_tasks_form()
+#     })
