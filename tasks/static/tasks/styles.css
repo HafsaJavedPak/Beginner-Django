@@ -10,3 +10,11 @@ input + input {
     margin-left : 0px;
     display: block;
 }
+
+ul[class="todo-list"] {
+    list-style-image: url('list-style.png');
+}
+
+li:target {
+    text-decoration-style: line-through;
+}

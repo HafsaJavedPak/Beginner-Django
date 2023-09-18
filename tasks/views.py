@@ -33,18 +33,3 @@ def index(request):
         "form": new_tasks_form()
     })
 
-# def addtask(request):
-#     if request.method == "POST" :
-#         form = new_tasks_form(request.POST)
-#         if form.is_valid() :
-#             task = form.cleaned_data["task"] 
-#             request.session["tasks"] += [task]
-#             return HttpResponseRedirect(reverse("tasks:index"))
-#         else :
-#             return render(request, "tasks/addtask.html", {
-#             "form": form
-#     })
-        
-#     return render(request, "tasks/addtask.html", {
-#         "form": new_tasks_form()
-#     })
