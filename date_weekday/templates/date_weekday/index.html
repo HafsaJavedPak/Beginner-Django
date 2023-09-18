@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'date_weekday/styles.css' %}">
+    <title>Date Stuff</title>
+</head>
+
+
+<body>
+    <h1>Hello! Today is {{day}}</h1>
+
+    {% if even_ornot %}
+        <h3>Today is even day!</h3>
+    {% else %}
+        <h3>Today is odd day!</h3>
+    {% endif %}
+
+    {% if date == 14 %}
+        <h3>14th of this month</h3>
+    {% else %}
+        <h3>not 14th of this month</h3>
+    {%endif%}
+    <h3>Today is {{weekday}}</h3>
+</body>
+</html>
